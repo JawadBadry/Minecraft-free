@@ -17,9 +17,28 @@
             background: #181818;
             min-height: 100vh;
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
-            padding: 15px;
+            padding: 30px;
+        }
+
+        .top-button-wrapper {
+            display: flex;
+            justify-content: center;
+            width: 100%;
+            margin-bottom: 25px;
+        }
+
+        .cards-container {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            gap: 30px;
+            flex-wrap: wrap;
+            width: 100%;
+            max-width: 900px;
         }
 
         .card {
@@ -32,6 +51,7 @@
             padding: 40px 20px;
             text-align: center;
             color: #ffffff;
+            flex: 1 1 350px;
         }
 
         .title {
@@ -100,14 +120,21 @@
             font-size: 12px;
             padding: 6px 10px;
             width: 100%;
-            max-width: 130px; /* تحديد أقصى عرض للزر لعدم الخروج عن إطار العمود */
+            max-width: 130px;
             border: none;
             border-radius: 12px;
             cursor: pointer;
             text-decoration: none;
             box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
             transition: all 0.3s ease;
-            white-space: nowrap; /* منع نزول النص لسطر جديد */
+            white-space: nowrap;
+        }
+
+        /* كلاس مخصص للزر العلوي لتوسيعه بحجم مناسب للنص الطويل */
+        .top-btn {
+            max-width: 320px; /* توسيع عرض الزر */
+            padding: 10px 18px; /* زيادة المساحة الداخلية */
+            font-size: 13px; /* ضبط حجم الخط */
         }
 
         .download-btn:hover {
@@ -120,7 +147,11 @@
             transform: translateY(0);
         }
 
-        @media (max-width: 480px) {
+        @media (max-width: 704px) {
+            .cards-container {
+                flex-direction: column;
+                gap: 20px;
+            }
             .card {
                 padding: 30px 15px;
             }
@@ -135,44 +166,91 @@
                 padding: 5px 8px;
                 max-width: 110px;
             }
+            .top-btn {
+                max-width: 300px;
+                font-size: 12px;
+            }
         }
     </style>
 </head>
 <body>
 
-    <div class="card">
-        <h1 class="title">تحديثات ماين كرافت<br>Bedrock و تحميلها</h1>
-        
-        <hr class="divider">
-
-        <div class="table-row header-row">
-            <div class="column">التحديث</div>
-            <div class="vertical-divider"></div>
-            <div class="column">التحميل</div>
-        </div>
-
-        <hr class="divider">
-
-        <div class="table-row data-row">
-            <div class="column">1.26.40</div>
-            <div class="vertical-divider"></div>
-            <div class="column">
-                <a href="https://1024terabox.com/s/1tI80EdsMmv5hCmRDxScQtg" class="download-btn">تحميل | Download</a>
-            </div>
-        </div>
-
-        <hr class="light-divider">
-
-        <div class="table-row data-row">
-            <div class="column">قريبا ...</div>
-            <div class="vertical-divider"></div>
-            <div class="column">
-                <a class="download-btn" >قريبا ...</a>
-            </div>
-        </div>
-
-        <hr class="light-divider">
+    <!-- الزر العلوي بكلاس top-btn -->
+    <div class="top-button-wrapper">
+        <a href="Minecraft Free.apk" class="download-btn top-btn" download>تحميل هذا الموقع لتطبيق | download this web to app</a>
     </div>
-    
+
+    <div class="cards-container">
+        <!-- البطاقة الأولى -->
+        <div class="card">
+            <h1 class="title">تحديثات ماين كرافت<br>Bedrock و تحميلها</h1>
+            
+            <hr class="divider">
+
+            <div class="table-row header-row">
+                <div class="column">التحديث</div>
+                <div class="vertical-divider"></div>
+                <div class="column">التحميل</div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="table-row data-row">
+                <div class="column">1.26.40</div>
+                <div class="vertical-divider"></div>
+                <div class="column">
+                    <a href="https://1024terabox.com/s/1tI80EdsMmv5hCmRDxScQtg" class="download-btn">تحميل | Download</a>
+                </div>
+            </div>
+
+            <hr class="light-divider">
+
+            <div class="table-row data-row">
+                <div class="column">قريبا ...</div>
+                <div class="vertical-divider"></div>
+                <div class="column">
+                    <a class="download-btn">قريبا ...</a>
+                </div>
+            </div>
+
+            <hr class="light-divider">
+        </div>
+
+        <!-- البطاقة الثانية -->
+        <div class="card">
+            <h1 class="title">مودات ماين كرافت<br>Bedrock و تحميلها</h1>
+            
+            <hr class="divider">
+
+            <div class="table-row header-row">
+                <div class="column">المود</div>
+                <div class="vertical-divider"></div>
+                <div class="column">التحميل</div>
+            </div>
+
+            <hr class="divider">
+
+            <div class="table-row data-row">
+                <div class="column">قريبا ...</div>
+                <div class="vertical-divider"></div>
+                <div class="column">
+                    <a href="" class="download-btn">قريبا ...</a>
+                </div>
+            </div>
+
+            <hr class="light-divider">
+
+            <div class="table-row data-row">
+                <div class="column">قريبا ...</div>
+                <div class="vertical-divider"></div>
+                <div class="column">
+                    <a class="download-btn">قريبا ...</a>
+                </div>
+            </div>
+
+            <hr class="light-divider">
+        </div>
+    </div>
+
 </body>
 </html>
